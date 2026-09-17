@@ -9,7 +9,7 @@
 
     <!-- Package Metadata adhering to Microsoft Package Authoring Best Practices -->
     <PackageId>Safaricom.Daraja.AspNetCore</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Modi97, Jose Modi</Authors>
     <Company>Modi97</Company>
     <Copyright>Copyright (c) 2026 Jose Modi</Copyright>
@@ -19,7 +19,7 @@
     <RepositoryUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>safaricom;daraja;mpesa;aspnetcore;minimalapi;webhook;stkpush;c2b;billmanager;kenya;payments</PackageTags>
-    <PackageReleaseNotes>0.1.0: Initial preview release of the ASP.NET Core adapter.</PackageReleaseNotes>
+    <PackageReleaseNotes>0.2.0: Version alignment with the CLI's expanded command coverage - no functional changes since 0.1.0. 0.1.0: Initial preview release of the ASP.NET Core adapter.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <!-- Source Link & Debug Symbols -->

@@ -12,7 +12,7 @@ environment switching and one shared OAuth session across every product area.
 
 Authored by [Modi97](https://www.nuget.org/profiles/Modi97) / [Jose Modi](https://github.com/JoseModi97).
 
-> **Status: early preview (v0.1.0), published to NuGet.org.** All four packages below are
+> **Status: early preview (v0.2.0), published to NuGet.org.** All four packages below are
 > implemented and tested, including live verification against the real Daraja Sandbox — see
 > [Verified against the live Sandbox](#verified-against-the-live-sandbox).
 

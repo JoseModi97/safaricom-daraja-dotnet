@@ -13,17 +13,17 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>safaricom-daraja</ToolCommandName>
     <PackageId>dotnet-safaricom-daraja</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Modi97, Jose Modi</Authors>
     <Company>Modi97</Company>
     <Copyright>Copyright (c) 2026 Jose Modi</Copyright>
-    <Description>CLI tool and project scaffolder for the Safaricom Daraja API in .NET applications: interactive setup, STK Push testing, and offline cryptography self-checks.</Description>
+    <Description>CLI tool and project scaffolder for the Safaricom Daraja API in .NET applications: interactive setup, STK Push/C2B/B2C/B2B/Reversal/Transaction Status/Account Balance/Ratiba/Bonga/Pull API/QR/Bill Manager commands, and offline cryptography self-checks.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>safaricom;daraja;mpesa;cli;dotnet-tool;stkpush;kenya;payments</PackageTags>
-    <PackageReleaseNotes>0.1.0: Initial preview release of the CLI tool.</PackageReleaseNotes>
+    <PackageReleaseNotes>0.2.0: Added c2b, b2c, b2b (incl. --pay-taxes), reversal, transaction-status, account-balance, ratiba, bonga, pull-api, qr, and bill-manager commands, covering every core Daraja service area. 0.1.0: Initial preview release of the CLI tool.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
