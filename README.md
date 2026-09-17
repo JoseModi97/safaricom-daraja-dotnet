@@ -313,9 +313,37 @@ safaricom-daraja stk --shortcode 174379 --passkey YOUR_PASSKEY --phone 254712345
   --amount 1 --callback-url https://example.com/mpesa/stk-callback
 safaricom-daraja stk --shortcode 174379 --passkey YOUR_PASSKEY --query ws_CO_...
 
+# C2B: register callback URLs, or (Sandbox only) simulate an incoming payment
+safaricom-daraja c2b --shortcode 600000 --confirmation-url https://example.com/payments/c2b/confirmation \
+  --validation-url https://example.com/payments/c2b/validation
+safaricom-daraja c2b --simulate --shortcode 600000 --phone 254712345678 --amount 100 --bill-ref INV-0001
+
+# B2C / B2B / Reversal / Transaction Status / Account Balance all need a SecurityCredential
+safaricom-daraja b2c --initiator apiuser --shortcode 600000 --phone 254712345678 --amount 500 \
+  --remarks Refund --result-url https://example.com/mpesa/b2c/result --timeout-url https://example.com/mpesa/b2c/timeout \
+  --cert path/to/cert.cer --initiator-password YourInitiatorPassword
+
+# Dynamic QR Code
+safaricom-daraja qr --merchant-name "Example Store" --reference-no INV-0001 --amount 500 --cpi 174379 --output qr.png
+
+# M-Pesa Ratiba standing order
+safaricom-daraja ratiba --name "Monthly subscription" --shortcode 174379 --phone 254712345678 --amount 500 \
+  --callback-url https://example.com/mpesa/ratiba-callback --account-reference SUB-001 \
+  --start-date 2026-10-01 --end-date 2027-10-01
+
+# Bill Manager
+safaricom-daraja bill-manager --optin --shortcode 174379 --email billing@example.com \
+  --contact 254712345678 --callback-url https://example.com/mpesa/billmanager/reconciliation
+
 # Offline cryptography self-check (SecurityCredential RSA round-trip, STK password format)
 safaricom-daraja test
 ```
+
+Every core Daraja service area (STK Push/Query, C2B, B2C, B2B + Tax Remittance, Reversal,
+Transaction Status, Account Balance, Ratiba, Lipa na Bonga, Pull API, Dynamic QR, Bill Manager)
+has a CLI command — run `safaricom-daraja --help` for the full flag reference for each. (The
+`Safaricom.Daraja.IoT` module isn't wired into the CLI — it's a separate package with a
+different auth model.)
 
 `init` detects whether you're in an ASP.NET Core Minimal API, MVC, or plain console project and
 scaffolds a working STK Push example (endpoint/controller + callback handler) plus an
@@ -464,6 +492,12 @@ this SDK, its response schema hasn't been cross-checked against official documen
 `LipaNaBongaClient` returns the raw response body (`DarajaRawResult.Json`) rather than a
 typed model with guessed field names. If you've confirmed the real shape against your own
 sandbox, contributions adding a typed model are welcome.
+
+**Live-tested finding**: `safaricom-daraja bonga --calculate --points 100` against the real
+Sandbox with a standard app registration returned `404 Not Found` on
+`/v1/lipa/na/bonga/calculator-points`. The request shape matches the reference collection
+exactly, so this looks like the product needing separate account enablement rather than a bug
+in this SDK — but if you get it working, we'd like to know what's different about your setup.
 
 ---
 

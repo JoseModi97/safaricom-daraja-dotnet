@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using Safaricom.Daraja.Models;
@@ -12,7 +11,7 @@ public static class StkCommand
 {
     public static async Task ExecuteAsync(string[] args)
     {
-        var flags = ParseFlags(args);
+        var flags = CliFlags.Parse(args);
         var config = CliConfigLoader.LoadConfig();
         var stkPush = new StkPushClient(new DarajaTransport(config));
 
@@ -119,33 +118,5 @@ public static class StkCommand
             Console.ResetColor();
             Environment.Exit(1);
         }
-    }
-
-    private static Dictionary<string, string> ParseFlags(string[] args)
-    {
-        var dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        for (int i = 0; i < args.Length; i++)
-        {
-            var arg = args[i];
-            if (arg.StartsWith("--"))
-            {
-                var key = arg.Substring(2);
-                if (i + 1 < args.Length && !args[i + 1].StartsWith("--"))
-                {
-                    dict[key] = args[i + 1];
-                    i++;
-                }
-                else
-                {
-                    dict[key] = "true";
-                }
-            }
-            else if (arg.StartsWith("-"))
-            {
-                var key = arg.Substring(1);
-                dict[key] = "true";
-            }
-        }
-        return dict;
     }
 }

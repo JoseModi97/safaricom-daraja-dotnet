@@ -12,7 +12,7 @@ public static class InitCommand
         var targetDir = Directory.GetCurrentDirectory();
         var (detectedFramework, _) = ProjectScaffolder.DetectEnvironment(targetDir);
 
-        var flags = ParseFlags(args);
+        var flags = CliFlags.Parse(args);
         var autoYes = flags.ContainsKey("yes") || flags.ContainsKey("y");
 
         var consumerKey = flags.GetValueOrDefault("consumer-key") ?? Environment.GetEnvironmentVariable("DARAJA_CONSUMER_KEY") ?? string.Empty;
@@ -92,33 +92,5 @@ public static class InitCommand
         Console.WriteLine("3. Run \x1b[36msafaricom-daraja test\x1b[0m anytime to verify cryptography, or \x1b[36msafaricom-daraja token\x1b[0m to verify your credentials\n");
 
         await Task.CompletedTask;
-    }
-
-    private static Dictionary<string, string> ParseFlags(string[] args)
-    {
-        var dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        for (int i = 0; i < args.Length; i++)
-        {
-            var arg = args[i];
-            if (arg.StartsWith("--"))
-            {
-                var key = arg.Substring(2);
-                if (i + 1 < args.Length && !args[i + 1].StartsWith("--"))
-                {
-                    dict[key] = args[i + 1];
-                    i++;
-                }
-                else
-                {
-                    dict[key] = "true";
-                }
-            }
-            else if (arg.StartsWith("-"))
-            {
-                var key = arg.Substring(1);
-                dict[key] = "true";
-            }
-        }
-        return dict;
     }
 }
