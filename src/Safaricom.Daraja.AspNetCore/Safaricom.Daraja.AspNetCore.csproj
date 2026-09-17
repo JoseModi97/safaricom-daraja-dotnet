@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- Package Metadata adhering to Microsoft Package Authoring Best Practices -->
+    <PackageId>Safaricom.Daraja.AspNetCore</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Modi97, Jose Modi</Authors>
+    <Company>Modi97</Company>
+    <Copyright>Copyright (c) 2026 Jose Modi</Copyright>
+    <Description>ASP.NET Core integration for the Safaricom Daraja API. Dependency injection extensions, Minimal API webhook endpoint mapping (STK Push, C2B, B2C/B2B/Reversal/Transaction Status/Account Balance result callbacks, Bill Manager reconciliation), and MVC webhook processing helpers.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>safaricom;daraja;mpesa;aspnetcore;minimalapi;webhook;stkpush;c2b;billmanager;kenya;payments</PackageTags>
+    <PackageReleaseNotes>0.1.0: Initial preview release of the ASP.NET Core adapter.</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- Source Link & Debug Symbols -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.401" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Safaricom.Daraja\Safaricom.Daraja.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RollForward>LatestMajor</RollForward>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- Global Tool Metadata adhering to Microsoft Package Authoring Best Practices -->
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>safaricom-daraja</ToolCommandName>
+    <PackageId>dotnet-safaricom-daraja</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Modi97, Jose Modi</Authors>
+    <Company>Modi97</Company>
+    <Copyright>Copyright (c) 2026 Jose Modi</Copyright>
+    <Description>CLI tool and project scaffolder for the Safaricom Daraja API in .NET applications: interactive setup, STK Push testing, and offline cryptography self-checks.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>safaricom;daraja;mpesa;cli;dotnet-tool;stkpush;kenya;payments</PackageTags>
+    <PackageReleaseNotes>0.1.0: Initial preview release of the CLI tool.</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Safaricom.Daraja\Safaricom.Daraja.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

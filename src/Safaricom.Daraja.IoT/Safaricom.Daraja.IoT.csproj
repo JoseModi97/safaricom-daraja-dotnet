@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings Condition="'$(TargetFramework)' != 'netstandard2.0'">enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+    <!-- Package Metadata adhering to Microsoft Package Authoring Best Practices -->
+    <PackageId>Safaricom.Daraja.IoT</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Modi97, Jose Modi</Authors>
+    <Company>Modi97</Company>
+    <Copyright>Copyright (c) 2026 Jose Modi</Copyright>
+    <Description>.NET client for Safaricom's IoT SIM-portal (SIM messaging and subscriber/SIM operations) and IMSI CheckATI APIs. A distinct product from core Daraja with its own auth/header scheme and no public documentation - responses are returned as raw JSON since this SDK cannot verify a typed response shape against official docs.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JoseModi97/safaricom-daraja-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>safaricom;daraja;iot;simportal;imsi;sim-management;kenya</PackageTags>
+    <PackageReleaseNotes>0.1.0: Initial preview release of the IoT SIM-portal / IMSI module.</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- Source Link & Debug Symbols -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.401" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Safaricom.Daraja\Safaricom.Daraja.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

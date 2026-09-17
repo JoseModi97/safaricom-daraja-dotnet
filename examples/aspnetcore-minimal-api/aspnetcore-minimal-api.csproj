@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ProjectReferences for now since these packages aren't published to NuGet yet.
+         Once they are, replace with PackageReference to Safaricom.Daraja / Safaricom.Daraja.AspNetCore. -->
+    <ProjectReference Include="..\..\src\Safaricom.Daraja\Safaricom.Daraja.csproj" />
+    <ProjectReference Include="..\..\src\Safaricom.Daraja.AspNetCore\Safaricom.Daraja.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>
