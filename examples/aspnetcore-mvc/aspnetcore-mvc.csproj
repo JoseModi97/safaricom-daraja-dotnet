@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- ProjectReferences for now since these packages aren't published to NuGet yet.
-         Once they are, replace with PackageReference to Safaricom.Daraja / Safaricom.Daraja.AspNetCore. -->
-    <ProjectReference Include="..\..\src\Safaricom.Daraja\Safaricom.Daraja.csproj" />
-    <ProjectReference Include="..\..\src\Safaricom.Daraja.AspNetCore\Safaricom.Daraja.AspNetCore.csproj" />
+    <PackageReference Include="Safaricom.Daraja.AspNetCore" Version="0.1.0" />
   </ItemGroup>
 
 </Project>

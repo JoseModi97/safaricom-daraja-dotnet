@@ -8,11 +8,9 @@ architectural styles.
 > placeholder values (`YOUR_CONSUMER_KEY`, etc.) or read from environment variables /
 > `appsettings.json`. Never commit real Consumer Key/Secret values to source control, even
 > Sandbox ones.
->
-> **Package references**: these examples use `ProjectReference` to the local source rather
-> than `PackageReference`, since `Safaricom.Daraja` isn't published to NuGet yet. Once it is,
-> swap the `ProjectReference` items in each `.csproj` for `PackageReference` to the published
-> packages — everything else in these examples stays the same.
+
+All examples reference the published NuGet packages (`Safaricom.Daraja` /
+`Safaricom.Daraja.AspNetCore`) directly — no local build of this repo is required to run them.
 
 ---
 

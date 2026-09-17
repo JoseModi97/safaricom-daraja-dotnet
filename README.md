@@ -1,5 +1,8 @@
 # Safaricom.Daraja
 
+[![NuGet](https://img.shields.io/nuget/v/Safaricom.Daraja.svg)](https://www.nuget.org/packages/Safaricom.Daraja)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Safaricom.Daraja.svg)](https://www.nuget.org/packages/Safaricom.Daraja)
+[![Build Status](https://github.com/JoseModi97/safaricom-daraja-dotnet/actions/workflows/release.yml/badge.svg)](https://github.com/JoseModi97/safaricom-daraja-dotnet/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![.NET](https://img.shields.io/badge/.NET-netstandard2.0%20%7C%20net8.0%20%7C%20net10.0-blue.svg)](https://dotnet.microsoft.com/)
 [![Sponsor via Pesapal](https://img.shields.io/badge/Sponsor_via-Pesapal-0099ff.svg?logo=heart&logoColor=white)](https://store.pesapal.com/opensourcesponsorship)
@@ -9,7 +12,7 @@ environment switching and one shared OAuth session across every product area.
 
 Authored by [Modi97](https://www.nuget.org/profiles/Modi97) / [Jose Modi](https://github.com/JoseModi97).
 
-> **Status: early preview, not yet published to NuGet.** All four packages below are
+> **Status: early preview (v0.1.0), published to NuGet.org.** All four packages below are
 > implemented and tested, including live verification against the real Daraja Sandbox — see
 > [Verified against the live Sandbox](#verified-against-the-live-sandbox).
 
@@ -467,17 +470,18 @@ sandbox, contributions adding a typed model are welcome.
 ## Examples & Samples
 
 - [`examples/`](examples) — four self-contained, copy-pasteable demos: `console-script`,
-  `aspnetcore-minimal-api`, `aspnetcore-mvc`, `worker-service`. Each currently uses a
-  `ProjectReference` to the local source (not yet a `PackageReference`) since these packages
-  aren't published to NuGet yet — see [`examples/README.md`](examples/README.md).
+  `aspnetcore-minimal-api`, `aspnetcore-mvc`, `worker-service`. Each references the published
+  NuGet packages directly — see [`examples/README.md`](examples/README.md).
 - [`samples/Safaricom.Daraja.Sample.Console`](samples/Safaricom.Daraja.Sample.Console) — part of
-  the main solution; this is the project used for the live Sandbox verification above.
+  the main solution (uses a local `ProjectReference`); this is the project used for the live
+  Sandbox verification above.
 
 ## Roadmap
 
-- Publish `Safaricom.Daraja`, `Safaricom.Daraja.AspNetCore`, `Safaricom.Daraja.IoT`, and
-  `dotnet-safaricom-daraja` to NuGet.org, then swap the examples' `ProjectReference`s for
-  `PackageReference`s.
+- Cross-check `Safaricom.Daraja.IoT` (SIM-portal/IMSI) and the less common core areas (Ratiba,
+  Bill Manager, Lipa na Bonga, Pull API) against real Sandbox credentials — only OAuth, STK
+  Push/Query, and C2B Simulate have been run against the live Sandbox so far.
+- Add a NuGet package icon.
 
 ---
 

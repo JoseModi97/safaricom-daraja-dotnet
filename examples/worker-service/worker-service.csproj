@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- ProjectReference for now since Safaricom.Daraja isn't published to NuGet yet.
-         Once it is, replace this with: <PackageReference Include="Safaricom.Daraja" Version="x.y.z" /> -->
-    <ProjectReference Include="..\..\src\Safaricom.Daraja\Safaricom.Daraja.csproj" />
+    <PackageReference Include="Safaricom.Daraja" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
